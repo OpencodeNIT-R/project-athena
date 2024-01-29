@@ -1,9 +1,14 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/hooks/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/shared/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -16,13 +21,13 @@ module.exports = {
         '4xl': '36px',
         '11xl': '64px',
       },
-      colors: {
-        
-      },
+    
       fontFamily: {
         Inter: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [addDynamicIconSelectors(),],
 }
+
+
